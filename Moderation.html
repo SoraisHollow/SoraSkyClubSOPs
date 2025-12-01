@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SoraSKyclub - Bouncer Moderation logging SOP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+    :root {
+      --bg: #050509;
+      --bg-alt: #11111a;
+      --accent: #ff4db8;
+      --accent-soft: #ff4db833;
+      --text: #f4f4f7;
+      --muted: #a0a0b5;
+      --border: #272738;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #181828 0, var(--bg) 40%);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 2rem 1rem 4rem;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, #0b0b12, #050509);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.65);
+      padding: 2.5rem 2rem 3rem;
+    }
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      font-size: 1.9rem;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    h1::before {
+      content: "☁";
+      font-size: 1.6rem;
+      color: var(--accent);
+      filter: drop-shadow(0 0 10px var(--accent));
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      margin-top: 1.4rem;
+      font-size: 1.05rem;
+      color: var(--accent);
+    }
+    p {
+      color: var(--muted);
+      margin: 0.3rem 0 0.8rem;
+    }
+    strong { color: #ffffff; }
+    .tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: #0f0f1a;
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid var(--accent-soft);
+      color: var(--muted);
+    }
+    .pill span {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 6px var(--accent);
+    }
+    .callout {
+      border-radius: 12px;
+      border: 1px solid var(--accent-soft);
+      background: rgba(10, 10, 18, 0.85);
+      padding: 0.8rem 1rem;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.85rem;
+    }
+    .callout strong {
+      color: var(--accent);
+    }
+    .section-box {
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(8, 8, 14, 0.95);
+      padding: 1rem 1.1rem;
+      margin-top: 1rem;
+    }
+    ul, ol {
+      padding-left: 1.2rem;
+      margin-top: 0.4rem;
+      margin-bottom: 0.7rem;
+    }
+    li {
+      margin: 0.15rem 0;
+      color: var(--muted);
+    }
+    .checklist li {
+      list-style: none;
+      position: relative;
+      padding-left: 1.4rem;
+    }
+    .checklist li::before {
+      content: "☑";
+      position: absolute;
+      left: 0;
+      top: 0.05rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.82rem;
+      background: #11111c;
+      border-radius: 6px;
+      padding: 0.1rem 0.35rem;
+      border: 1px solid #1d1d2b;
+    }
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .step-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.1rem;
+    }
+    .footer-note {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px dashed var(--border);
+      padding-top: 0.75rem;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 1.7rem 1.2rem 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="pill"><span></span> SoraSkyClub • Bouncer SOP</div>
+    <h1>Moderation Logging SOP (Bouncers & Security)</h1>
+    <p class="tagline">
+      This page explains how <strong>Bouncers and Security</strong> should log incidents,
+      record evidence, and prepare clean case files in Notion for Admin review.
+    </p>
+
+    <div class="callout">
+      <strong>Scope:</strong> This SOP applies to Bouncers, Security, and other staff who handle
+      moderation actions. Admins and Owners review and finalize cases after you log them.
+    </div>
+
+    <h2>0. Core Principles</h2>
+    <div class="section-box">
+      <ul class="checklist">
+        <li><strong>Be accurate:</strong> Record what actually happened, not what you think happened.</li>
+        <li><strong>Be concise:</strong> Short, clear descriptions make it easier for Admins to review.</li>
+        <li><strong>Be consistent:</strong> Always use the same fields and Case ID format.</li>
+        <li><strong>Be respectful:</strong> Treat all users fairly, even when they break rules.</li>
+      </ul>
+    </div>
+
+    <h2>1. Moderation Case Basics (Notion Fields)</h2>
+    <div class="section-box">
+      <p>Every time you take a moderation action, create or update a case in the <strong>Moderation / Cases</strong> database in Notion.</p>
+
+      <h3>1.1 Required Fields</h3>
+      <ul>
+        <li><strong>Case Title:</strong> A quick synopsis of what happened in short form.
+          <br><em>Example:</em> “Voice chat harassment during event”</li>
+        <li><strong>Case ID:</strong> Use the format <code>Case-{Year}-{sequential number}</code>.
+          <br><em>Example:</em> <code>Case-2025-001</code>, <code>Case-2025-002</code>, etc.</li>
+        <li><strong>Users:</strong> The user’s name(s) involved in the case.
+          You can include <strong>multiple users</strong> in a single case file if needed.</li>
+        <li><strong>Action Taken:</strong> All actions you took during the incident:
+          <ul>
+            <li>Warnings (verbal or written)</li>
+            <li>Mutes / Kicks / Bans</li>
+            <li>Any escalations to Admins</li>
+          </ul>
+        </li>
+        <li><strong>Short Reason:</strong> Select from the list of preset violations
+          (e.g. harassment, hate speech, spam, NSFW, etc.). Choose all that apply.</li>
+        <li><strong>Date:</strong> The date of the incident (use the date it actually occurred, not when you logged it).</li>
+        <li><strong>Evidence:</strong> Screenshots and/or videos:
+          <ul>
+            <li>Screenshots can be uploaded <strong>directly</strong> to this field.</li>
+            <li>Video links should be added here after upload (see evidence section below).</li>
+          </ul>
+        </li>
+        <li><strong>Internal Notes:</strong> Any additional information you feel may be relevant:
+          <ul>
+            <li>Context leading up to the incident.</li>
+            <li>How the user responded to staff.</li>
+            <li>Any history you’re aware of (if not already logged elsewhere).</li>
+          </ul>
+        </li>
+        <li><strong>Reported by:</strong> Who Reported the infraction.(Guest/Staff)
+        </li>
+      </ul>
+
+      <h3>1.2 Admin-Only Fields</h3>
+      <p>
+        <strong>Leave all remaining fields empty</strong> unless you are an Admin or specifically told otherwise.
+        Those fields are for Admin review, final decisions, and long-term tracking.
+      </p>
+    </div>
+
+    <h2>2. Creating a Case in Notion (Step-by-Step)</h2>
+    <div class="section-box">
+      <ol>
+        <li>Open the <strong>Moderation / Cases</strong> database in Notion.</li>
+        <li>Click <strong>“New”</strong> to create a new case entry.</li>
+        <li>Fill out the required fields listed in Section 1:
+          <ul>
+            <li>Case Title</li>
+            <li>Case ID</li>
+            <li>Users</li>
+            <li>Action Taken</li>
+            <li>Short Reason</li>
+            <li>Date</li>
+            <li>Evidence</li>
+            <li>Internal Notes</li>
+          </ul>
+        </li>
+        <li>Add screenshots directly to the <strong>Evidence</strong> field
+          or paste video message links there (see Section 3).</li>
+        <li>Double-check spelling, Case ID, and user names for accuracy.</li>
+        <li>Leave the remaining fields blank for <strong>Admin review</strong>.</li>
+      </ol>
+    </div>
+
+    <h2>3. Evidence Logging (Screenshots & Video)</h2>
+    <div class="section-box">
+      <p><strong>Goal:</strong> Make sure every case has clear, accessible evidence to back up the actions taken.</p>
+
+      <div class="columns">
+        <div>
+          <h3>3.1 Screenshot Evidence</h3>
+          <ul>
+            <li>Take clear screenshots that show:
+              <ul>
+                <li>Usernames</li>
+                <li>Chat logs or actions</li>
+                <li>Relevant context (not just a cropped insult with no source)</li>
+              </ul>
+            </li>
+            <li>In the Notion case, go to the <strong>Evidence</strong> field.</li>
+            <li>Upload your screenshots <strong>directly</strong> into this field.</li>
+            <li>Optionally label them with the <strong>Case ID</strong> for clarity.
+              <br><em>Example:</em> <code>Case-2025-003_screen1.png</code></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>3.2 Video Evidence</h3>
+          <ul>
+            <li>Videos <strong>do not</strong> go directly into Notion.</li>
+            <li>Upload all video evidence to the
+              <code>#🛅・evidence-locker</code> channel in the <strong>Staff</strong> section
+              of the SkyClub Discord.</li>
+            <li>In your upload message:
+              <ul>
+                <li>Mention the <strong>Case ID</strong> in the message text.</li>
+                <li>Example: “Video evidence for <code>Case-2025-004</code>”</li>
+              </ul>
+            </li>
+            <li>After the upload completes, right-click the message and choose
+              <strong>Copy Message Link</strong>.</li>
+            <li>Go back to the Notion case and paste this link into the <strong>Evidence</strong> field
+              (alongside your screenshots, if any).</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>3.3 Linking Everything Together</h3>
+      <ul>
+        <li>Every piece of evidence should clearly reference the <strong>Case ID</strong>.</li>
+        <li>Admins should be able to open the Notion case and quickly find:
+          <ul>
+            <li>Who was involved,</li>
+            <li>What happened,</li>
+            <li>What actions were taken,</li>
+            <li>And the screenshot/video proof.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <h2>4. Quick Checklist (Bouncers & Security)</h2>
+    <div class="section-box">
+      <ul class="checklist">
+        <li>Handle the incident calmly and follow SoraSkyClub rules for moderation.</li>
+        <li>Create a new case in the Notion <strong>Moderation / Cases</strong> database.</li>
+        <li>Set a proper <strong>Case Title</strong> and <strong>Case ID</strong> (Case-Year-Number).</li>
+        <li>List <strong>all users</strong> involved in the <strong>Users</strong> field.</li>
+        <li>Record <strong>all actions taken</strong> (warning, mute, kick, ban, escalation).</li>
+        <li>Select appropriate <strong>Short Reason</strong> violations.</li>
+        <li>Set the correct <strong>Date</strong> of the incident.</li>
+        <li>Upload screenshots into the Notion <strong>Evidence</strong> field.</li>
+        <li>Upload videos to <code>#🛅・evidence-locker</code>, add the <strong>Case ID</strong>,
+            then paste the message link into the Evidence field.</li>
+        <li>Add any relevant <strong>Internal Notes</strong>.</li>
+        <li>Leave all other fields blank for <strong>Admin review</strong>.</li>
+      </ul>
+    </div>
+
+    <p class="footer-note">
+      If you are unsure how to classify an incident or what action to take, log what you can,
+      then ping an Admin or Owner in the staff channels for guidance.  
+      A well-documented case keeps SoraSkyClub safe, fair, and trusted.
+    </p>
+  </main>
+</body>
+</html>

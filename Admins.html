@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SoraSkyClub – Admin Review SOP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050509;
+      --bg-alt: #11111a;
+      --accent: #ff4db8;
+      --accent-soft: #ff4db833;
+      --text: #f4f4f7;
+      --muted: #a0a0b5;
+      --border: #272738;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #181828 0, var(--bg) 40%);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 2rem 1rem 4rem;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, #0b0b12, #050509);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.65);
+      padding: 2.5rem 2rem 3rem;
+    }
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      font-size: 1.9rem;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    h1::before {
+      content: "☁";
+      font-size: 1.6rem;
+      color: var(--accent);
+      filter: drop-shadow(0 0 10px var(--accent));
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      margin-top: 1.4rem;
+      font-size: 1.05rem;
+      color: var(--accent);
+    }
+    p {
+      color: var(--muted);
+      margin: 0.3rem 0 0.8rem;
+    }
+    strong { color: #ffffff; }
+    .tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: #0f0f1a;
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid var(--accent-soft);
+      color: var(--muted);
+    }
+    .pill span {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 6px var(--accent);
+    }
+    .callout {
+      border-radius: 12px;
+      border: 1px solid var(--accent-soft);
+      background: rgba(10, 10, 18, 0.85);
+      padding: 0.8rem 1rem;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.85rem;
+    }
+    .callout strong {
+      color: var(--accent);
+    }
+    .section-box {
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(8, 8, 14, 0.95);
+      padding: 1rem 1.1rem;
+      margin-top: 1rem;
+    }
+    ul, ol {
+      padding-left: 1.2rem;
+      margin-top: 0.4rem;
+      margin-bottom: 0.7rem;
+    }
+    li {
+      margin: 0.15rem 0;
+      color: var(--muted);
+    }
+    .checklist li {
+      list-style: none;
+      position: relative;
+      padding-left: 1.4rem;
+    }
+    .checklist li::before {
+      content: "☑";
+      position: absolute;
+      left: 0;
+      top: 0.05rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.82rem;
+      background: #11111c;
+      border-radius: 6px;
+      padding: 0.1rem 0.35rem;
+      border: 1px solid #1d1d2b;
+    }
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .footer-note {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px dashed var(--border);
+      padding-top: 0.75rem;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 1.7rem 1.2rem 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="pill"><span></span> SoraSkyClub • Admin SOP</div>
+    <h1>Admin Review SOP (Events & Infractions)</h1>
+    <p class="tagline">
+      This page explains how <strong>Admins</strong> should review event entries and moderation cases in Notion,
+      decide when follow-up is needed, and make sure Hosts and Bouncers are following their procedures.
+    </p>
+
+    <div class="callout">
+      <strong>Role:</strong> Admins are quality control. You do not replace Hosts or Bouncers;
+      you verify that they have done their job correctly, triage by severity, close cases,
+      and handle escalations when needed.
+    </div>
+
+    <h2>0. Overview of Responsibilities</h2>
+    <div class="section-box">
+      <ul class="checklist">
+        <li>Regularly review <strong>Events</strong> in Notion for completeness and consistency.</li>
+        <li>Regularly review <strong>Moderation / Cases</strong> for accuracy and enough evidence.</li>
+        <li><strong>Triage by severity:</strong> mark cases as <strong>Critical</strong> (needs immediate attention)
+            or <strong>Non-severe</strong> (can be handled during normal admin review).</li>
+        <li>Decide whether each event or case <strong>Needs follow-up</strong>, <strong>Can be closed</strong>,
+            or <strong>Must be escalated</strong>.</li>
+        <li>Provide feedback to Hosts and Bouncers if procedures are not followed correctly.</li>
+        <li>Update admin-only fields and statuses in Notion to keep records clean.</li>
+      </ul>
+    </div>
+
+    <h2>1. Event Review (Hosts’ Work)</h2>
+    <div class="section-box">
+      <p><strong>Goal:</strong> Make sure all public events are properly created and fully announced across platforms.</p>
+
+      <h3>1.1 What to Review</h3>
+      <p>In the <strong>Events</strong> database in Notion, focus on:</p>
+      <ul>
+        <li>Upcoming events (e.g. next 1–2 weeks).</li>
+        <li>Events where <strong>“Posted?”</strong> is <strong>unchecked</strong>.</li>
+        <li>Events with missing or obviously incorrect info.</li>
+      </ul>
+
+      <h3>1.2 Event Quality Checklist</h3>
+      <ul class="checklist">
+        <li><strong>Event field:</strong> Correct date/time and timezone format
+          (e.g. <code>11/28/2025 2230 CST</code>).</li>
+        <li><strong>Description:</strong> Clear event name/theme.</li>
+        <li><strong>Staff:</strong> Host(s) and key staff listed (bouncers, bartenders, etc.).</li>
+        <li><strong>Performers:</strong> Any DJs / performers / special guests are listed.</li>
+        <li><strong>Links:</strong> Inside the page, VRChat event link + Discord event link present.</li>
+        <li><strong>Fourthwall Post:</strong> Confirm that a matching public post exists,
+            or a Supporter-only post if it’s a world-dev sneak peek.</li>
+      </ul>
+
+      <h3>1.3 Follow-Up for Events</h3>
+      <ul>
+        <li>If something is missing or wrong:
+          <ul>
+            <li>Ping the responsible Host in the staff channels or in <code>#🗒️・planning</code>.</li>
+            <li>Clearly state what is missing (e.g. “Need VRChat event link” or “Fourthwall post not yet live”).</li>
+          </ul>
+        </li>
+        <li>If everything is correct and live:
+          <ul>
+            <li>Confirm the <strong>“Posted?”</strong> box is checked.</li>
+            <li>Optionally add a short internal admin note (e.g. “Approved by Admin – Date”).</li>
+          </ul>
+        </li>
+        <li>If a Host repeatedly misses steps, document it in admin notes and bring it up in staff review.</li>
+      </ul>
+    </div>
+
+    <h2>2. Moderation Case Review (Bouncer Work)</h2>
+    <div class="section-box">
+      <p><strong>Goal:</strong> Ensure that every moderation action is properly logged, fair, backed by evidence,
+         and that cases are handled in order of severity.</p>
+
+      <h3>2.1 What to Review</h3>
+      <p>In the <strong>Moderation / Cases</strong> database, filter for:</p>
+      <ul>
+        <li>Cases with <strong>no Admin status</strong> or marked <strong>Pending</strong>/<strong>Needs Review</strong>.</li>
+        <li>Recent cases (e.g. last 30 days), with <strong>Critical</strong> ones checked first.</li>
+      </ul>
+
+      <h3>2.2 Case Quality Checklist</h3>
+      <ul class="checklist">
+        <li><strong>Case Title:</strong> Quick, clear synopsis of what happened.</li>
+        <li><strong>Case ID:</strong> Uses the correct format:
+          <code>Case-{Year}-{sequential number}</code>.</li>
+        <li><strong>Users:</strong> All involved users are listed, with correct names.</li>
+        <li><strong>Action Taken:</strong> All actions are recorded (warnings, mutes, kicks, bans, escalations).</li>
+        <li><strong>Short Reason:</strong> Appropriate violation tags selected.</li>
+        <li><strong>Date:</strong> Incident date is filled in and reasonable.</li>
+        <li><strong>Evidence:</strong>
+          <ul>
+            <li>Screenshots attached directly to the Evidence field where possible.</li>
+            <li>Video links pointing to <code>#🛅・evidence-locker</code> with the correct Case ID.</li>
+          </ul>
+        </li>
+        <li><strong>Internal Notes:</strong> Provide enough context to understand the situation.</li>
+        <li><strong>Severity (Admin-only field):</strong> Set to <strong>Critical</strong> or <strong>Non-severe</strong>
+            based on impact and urgency.</li>
+      </ul>
+
+      <h3>2.3 Severity & Deciding Follow-Up</h3>
+      <div class="columns">
+        <div>
+          <h3>Critical Cases (Immediate Attention)</h3>
+          <ul>
+            <li>Threats, doxxing, extreme harassment, hate content, or safety concerns.</li>
+            <li>Repeat severe offenses or long histories of issues with the same user.</li>
+            <li>Incidents happening <strong>during or right before</strong> major events.</li>
+          </ul>
+          <p>
+            Mark <strong>Severity = Critical</strong>.  
+            Review these cases first, ping relevant staff/Owner if needed,
+            and decide quickly whether to uphold, increase, or change the action taken.
+          </p>
+        </div>
+        <div>
+          <h3>Non-Severe Cases (Standard Review)</h3>
+          <ul>
+            <li>Minor rule breaks already handled with warnings or short mutes.</li>
+            <li>First-time, low-impact offenses.</li>
+            <li>Cases where the user corrected behavior after staff guidance.</li>
+          </ul>
+          <p>
+            Mark <strong>Severity = Non-severe</strong>.  
+            These can be processed during normal admin review sessions without urgent escalation.
+          </p>
+        </div>
+      </div>
+
+      <h3>2.4 Close, Follow-Up, or Escalate</h3>
+      <div class="columns">
+        <div>
+          <h3>Cases That Can Be Closed</h3>
+          <ul>
+            <li>Evidence supports the action taken.</li>
+            <li>Violation severity matches the response.</li>
+            <li>Procedures were followed correctly by the Bouncer.</li>
+          </ul>
+          <p>Mark the case with an admin-only field such as <strong>Status = Closed</strong>
+             and optionally note “Reviewed by Admin – Date”.</p>
+        </div>
+        <div>
+          <h3>Cases That Need Follow-Up</h3>
+          <ul>
+            <li>Evidence is incomplete or missing.</li>
+            <li>Action taken seems too harsh or too light for the violation.</li>
+            <li>There is a pattern of repeated behavior by the same user.</li>
+            <li>A Bouncer skipped steps or logged the case incorrectly.</li>
+          </ul>
+          <p>
+            Set <strong>Status = Needs Follow-Up</strong> and add a clear Admin note:
+            what needs to happen next, who owns the follow-up, and
+            whether the case is <strong>Critical</strong> or <strong>Non-severe</strong>.
+          </p>
+        </div>
+      </div>
+
+      <h3>2.5 Escalation</h3>
+      <ul>
+        <li>For severe incidents (hate speech, doxxing, threats, serious harassment):
+          <ul>
+            <li>Mark <strong>Severity = Critical</strong> and <strong>Status = Escalated</strong>.</li>
+            <li>Ping the Owner / HR-style contact in the staff channels.</li>
+            <li>Ensure all evidence is safely stored and linked.</li>
+          </ul>
+        </li>
+        <li>Document final decisions in an admin-only notes field (ban length, appeal outcome, etc.).</li>
+      </ul>
+    </div>
+
+    <h2>3. Checking Staff Procedure Quality</h2>
+    <div class="section-box">
+      <p><strong>Goal:</strong> Make sure Hosts and Bouncers are consistently using their SOPs.</p>
+
+      <h3>3.1 Hosts (Events)</h3>
+      <ul>
+        <li>Are events added to Notion in a timely manner?</li>
+        <li>Are VRChat, Discord, and Fourthwall pieces in place before “Posted?” is checked?</li>
+        <li>Do descriptions and times match across all platforms?</li>
+        <li>Is there clear communication in <code>#🗒️・planning</code> when something changes?</li>
+      </ul>
+
+      <h3>3.2 Bouncers (Moderation Logging)</h3>
+      <ul>
+        <li>Are all significant incidents getting case files?</li>
+        <li>Are Case IDs formatted correctly and sequential?</li>
+        <li>Is evidence properly attached and easy to read?</li>
+        <li>Is <strong>Severity</strong> being set appropriately (Critical vs Non-severe)?</li>
+        <li>Are Internal Notes professional and neutral in tone?</li>
+      </ul>
+
+      <h3>3.3 Giving Feedback</h3>
+      <ul>
+        <li>For minor issues, DM the staff member with a friendly correction (e.g. “Next time, please…”).</li>
+        <li>For repeated issues, document them in admin notes and bring them to staff meetings.</li>
+        <li>Update SOP pages when patterns show the process needs clarification.</li>
+      </ul>
+    </div>
+
+    <h2>4. Quick Admin Checklist</h2>
+    <div class="section-box">
+      <ul class="checklist">
+        <li>Review upcoming <strong>Events</strong> in Notion at regular intervals.</li>
+        <li>Verify each event has correct details, links, and a live Fourthwall post.</li>
+        <li>Mark events clearly when they are fully posted/approved.</li>
+        <li>Review new <strong>Moderation Cases</strong>, starting with those marked <strong>Critical</strong>.</li>
+        <li>Ensure each case has a <strong>Severity</strong> set (Critical or Non-severe).</li>
+        <li>Check that evidence (screenshots & video links) is properly connected to each case.</li>
+        <li>Decide: <strong>Closed</strong>, <strong>Needs Follow-Up</strong>, or <strong>Escalated</strong> for every pending case.</li>
+        <li>Give feedback to Hosts and Bouncers when SOPs are not being followed.</li>
+        <li>Keep admin-only fields and notes up to date so the whole leadership team has a clear picture.</li>
+      </ul>
+    </div>
+
+    <p class="footer-note">
+      Admin work is what keeps SoraSkyClub organized, safe, and consistent.  
+      If something in a process is unclear or repeatedly causing issues, document it and bring it up so the SOPs can evolve with the community.
+    </p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SoraSkyClub – Event SOP (Hosts & Up)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050509;
+      --bg-alt: #11111a;
+      --accent: #ff4db8;
+      --accent-soft: #ff4db833;
+      --text: #f4f4f7;
+      --muted: #a0a0b5;
+      --border: #272738;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #181828 0, var(--bg) 40%);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 2rem 1rem 4rem;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, #0b0b12, #050509);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.65);
+      padding: 2.5rem 2rem 3rem;
+    }
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      font-size: 1.9rem;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    h1::before {
+      content: "☁";
+      font-size: 1.6rem;
+      color: var(--accent);
+      filter: drop-shadow(0 0 10px var(--accent));
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      margin-top: 1.4rem;
+      font-size: 1.05rem;
+      color: var(--accent);
+    }
+    p {
+      color: var(--muted);
+      margin: 0.3rem 0 0.8rem;
+    }
+    strong { color: #ffffff; }
+    .tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: #0f0f1a;
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid var(--accent-soft);
+      color: var(--muted);
+    }
+    .pill span {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 6px var(--accent);
+    }
+    .callout {
+      border-radius: 12px;
+      border: 1px solid var(--accent-soft);
+      background: rgba(10, 10, 18, 0.85);
+      padding: 0.8rem 1rem;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.85rem;
+    }
+    .callout strong {
+      color: var(--accent);
+    }
+    .section-box {
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(8, 8, 14, 0.95);
+      padding: 1rem 1.1rem;
+      margin-top: 1rem;
+    }
+    ul, ol {
+      padding-left: 1.2rem;
+      margin-top: 0.4rem;
+      margin-bottom: 0.7rem;
+    }
+    li {
+      margin: 0.15rem 0;
+      color: var(--muted);
+    }
+    .checklist li {
+      list-style: none;
+      position: relative;
+      padding-left: 1.4rem;
+    }
+    .checklist li::before {
+      content: "☑";
+      position: absolute;
+      left: 0;
+      top: 0.05rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.82rem;
+      background: #11111c;
+      border-radius: 6px;
+      padding: 0.1rem 0.35rem;
+      border: 1px solid #1d1d2b;
+    }
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .step-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.1rem;
+    }
+    .footer-note {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px dashed var(--border);
+      padding-top: 0.75rem;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 1.7rem 1.2rem 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="pill"><span></span> SoraSkyClub • Host & Above SOP</div>
+    <h1>Event Pipeline SOP (Notion → VRChat → Discord → Fourthwall)</h1>
+    <p class="tagline">
+      This page explains how <strong>Hosts and higher</strong> should take an event idea from
+      Discord planning and turn it into a fully published event across all platforms.
+    </p>
+
+    <div class="callout">
+      <strong>Scope:</strong> This SOP applies to Hosts, Co-Hosts, Managers, and Owners.
+      World Devs follow this flow too when announcing world update events.
+    </div>
+
+    <h2>0. Prerequisites – Before You Touch Notion</h2>
+    <div class="section-box">
+      <p>First, lock in the basic details inside <code>#🗒️・planning</code> on Discord. You must know:</p>
+      <ul class="checklist">
+        <li><strong>Who?</strong> – Host(s), staff on duty, performers, DJs, special guests.</li>
+        <li><strong>What?</strong> – Event name & short description (e.g. “Chill and Hang”, “Open Mic Night”).</li>
+        <li><strong>When?</strong> – Date, time, and time zone (CST by default for SoraSkyClub).</li>
+        <li><strong>Where?</strong> – The VRChat world / instance and the SoraSkyClub group it belongs to. (JustBClub is default until we have our own world.)</li>
+      </ul>
+      <p>
+        Once those are confirmed in <code>#🗒️・planning</code>, you can move into the event pipeline:
+        <strong>Notion → VRChat Group → Discord Event → Fourthwall Post → After-Event Synopsis.</strong>
+      </p>
+    </div>
+
+    <h2>1. Updating the Notion “Events” Database</h2>
+    <div class="section-box">
+      <p><strong>Goal:</strong> Keep the internal SoraSkyClub event board up to date so staff can see who is doing what and when.</p>
+
+      <h3>1.1 Create or update the Notion event</h3>
+      <ol>
+        <li>Open the <strong>Events</strong> page in Notion.</li>
+        <li>Click <strong>“New page”</strong> (or open an existing event if you are editing).</li>
+        <li>
+          Fill out the main columns using your <code>#🗒️・planning</code> info:
+          <ul>
+            <li><strong>Event</strong> – Format as <code>MM/DD/YYYY HHMM TZ</code> (e.g. <code>11/28/2025 2230 CST</code>).</li>
+            <li><strong>Description</strong> – Short title + theme (e.g. “Chill and Hang”).</li>
+            <li><strong>Staff</strong> – Add the Host and any staff working (bouncers, bartenders, etc.).</li>
+            <li><strong>Performers</strong> – Add musicians / DJs / special guests.</li>
+            <li><strong>Posted?</strong> – Check this box <em>only after</em> VRChat, Discord, and Fourthwall posts are live.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h3>1.2 Internal notes (optional)</h3>
+      <p>Inside the Notion page you can add:</p>
+      <ul>
+        <li>Run-of-show / schedule.</li>
+        <li>Special rules or content warnings.</li>
+        <li>Links to playlists, sponsor info, or world-dev notes.</li>
+      </ul>
+    </div>
+
+    <h2>2. Creating the VRChat Group Scheduled Event</h2>
+    <div class="section-box">
+      <p><strong>Goal:</strong> Make sure the event is visible to the VRChat community and the SoraSkyClub group.</p>
+
+      <h3>2.1 Create the event</h3>
+      <ol>
+        <li>Go to the <strong>VRChat website</strong> and open the SoraSkyClub group.</li>
+        <li>Navigate to <strong>Events</strong> and select <strong>Create Scheduled Event</strong>.</li>
+        <li>Fill out the form:
+          <ul>
+            <li><strong>Title:</strong> Match or closely mirror the Notion description.</li>
+            <li><strong>Date &amp; Time:</strong> Use the “When?” you finalized in <code>#🗒️・planning</code>.</li>
+            <li><strong>World:</strong> Choose the correct SoraSkyClub world or event world.</li>
+            <li><strong>Description:</strong> Brief, clear, and on-brand. Include who the event is for and any requirements.</li>
+          </ul>
+        </li>
+        <li>Save / publish the event.</li>
+      </ol>
+
+      <h3>2.2 Record the VRChat link</h3>
+      <p>
+        Copy the event link and paste it back into:
+      </p>
+      <ul>
+        <li>The Notion event page (link section or notes).</li>
+        <li>The event message in Discord (for easy joining).</li>
+      </ul>
+    </div>
+
+    <h2>3. Creating the Discord Event</h2>
+    <div class="section-box">
+      <p><strong>Goal:</strong> Give the community an easy in-Discord way to see, RSVP, and share the event.</p>
+
+      <h3>3.1 Set up the event</h3>
+      <ol>
+        <li>In the main SoraSkyClub Discord server, open the appropriate channel or the server header menu.</li>
+        <li>Click <strong>Create Event</strong>.</li>
+        <li>Choose the correct type (e.g. “External” if it links out to VRChat).</li>
+        <li>Fill in:
+          <ul>
+            <li><strong>Event Name:</strong> Match the VRChat event title.</li>
+            <li><strong>Start Time:</strong> Same as the VRChat event.</li>
+            <li><strong>Description:</strong> Short description + mention the VRChat group event.</li>
+            <li><strong>Location / Link:</strong> Use the VRChat event link you copied.</li>
+          </ul>
+        </li>
+        <li>Upload an on-brand banner image if available.</li>
+        <li>Publish the event.</li>
+      </ol>
+
+      <h3>3.2 Announce in planning & event channels</h3>
+      <ul>
+        <li>Post the Discord event link in <code>#🗒️・planning</code> so staff can confirm.</li>
+        <li>Share it in the public event/announcement channel so community members can RSVP.</li>
+      </ul>
+    </div>
+
+    <h2>4. Creating the Fourthwall Post (Website Event Post)</h2>
+    <div class="section-box">
+      <p>
+        <strong>Goal:</strong> Make the event visible on the SoraSkyClub website via Fourthwall.
+        This acts as a news/event hub for people outside of VRChat and Discord.
+      </p>
+
+      <div class="columns">
+        <div>
+          <h3>4.1 Standard Events – Public Posts</h3>
+          <ol>
+            <li>Log into <strong>Fourthwall</strong> for SoraSkyClub.</li>
+            <li>Create a new <strong>Post</strong> (News/Blog/Event type).</li>
+            <li>Title it with the event name and date (e.g. “Chill and Hang – Nov 28, 2025”).</li>
+            <li>In the body, include:
+              <ul>
+                <li>Who is Staff.</li>
+                <li>What the vibe is (chill, live music, open mic, etc.).</li>
+                <li>When (date & time, with time zone).</li>
+                <li>Where (VRChat group & world name) + link to VRChat event.</li>
+                <li>Link to the Discord event, if applicable.</li>
+              </ul>
+            </li>
+            <li><strong>Visibility:</strong> Set the post to <strong>Public</strong> so it shows on the main website.</li>
+            <li>Publish and double-check that it appears on the site.</li>
+          </ol>
+        </div>
+
+        <div>
+          <h3>4.2 World-Dev Sneak Peeks – Supporters Only</h3>
+          <p>
+            If the event is a sneak peek or update tied to <strong>world development</strong>
+            (e.g., early access, behind-the-scenes), use supporter-only access:
+          </p>
+          <ol>
+            <li>Create the post as above, but mark it as a <strong>World Update / Sneak Peek</strong>.</li>
+            <li>Set visibility to <strong>Supporter Tier and up</strong> instead of public.</li>
+            <li>Mention clearly that it’s exclusive: “Supporter Early Look” or similar tag.</li>
+          </ol>
+          <p><strong>Reminder:</strong> Regular public events should <em>always</em> be public posts on Fourthwall.</p>
+        </div>
+      </div>
+
+      <h3>4.3 Mark as Posted in Notion</h3>
+      <p>
+        Once VRChat, Discord, and Fourthwall are all set up and published, return to the
+        Notion event entry and check the <strong>“Posted?”</strong> box.  
+        This signals to staff that the event is fully announced everywhere.
+      </p>
+    </div>
+
+    <h2>5. After-Event Synopsis (Recap)</h2>
+    <div class="section-box">
+      <p><strong>Goal:</strong> Capture how the event went and share the story with the community.</p>
+
+      <h3>5.1 Internal recap</h3>
+      <ul>
+        <li>Add a short <strong>After-Event Notes</strong> section inside the Notion event page:
+          <ul>
+            <li>Approx. attendance.</li>
+            <li>Any tech issues or improvements for next time.</li>
+            <li>Highlights (great performances, fun moments).</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>5.2 Public synopsis post</h3>
+      <p>Hosts are encouraged to create a brief “how it went” recap:</p>
+      <ul>
+        <li>Post a short summary in the designated <strong>event-recap channel</strong> on Discord.</li>
+        <li>Optionally create a small <strongFourthwall> follow-up post</strong> with photos/screenshots and highlights.</li>
+      </ul>
+      <p>
+        Keep the tone positive, thank attendees, and tease any upcoming events that are already in planning.
+      </p>
+    </div>
+
+    <h2>6. Quick Checklist (Host & Above)</h2>
+    <div class="section-box">
+      <ul class="checklist">
+        <li>Confirm Who / What / When / Where in <code>#🗒️・planning</code>.</li>
+        <li>Create or update the event in the Notion “Events” database.</li>
+        <li>Create a VRChat Group scheduled event and copy the link.</li>
+        <li>Create a matching Discord event using the VRChat link.</li>
+        <li>Create a Fourthwall post (Public for regular events, Supporter-only for world-dev sneak peeks).</li>
+        <li>Mark <strong>“Posted?”</strong> in Notion once all platforms are live.</li>
+        <li>After the event, write an internal recap + optional public synopsis.</li>
+      </ul>
+    </div>
+
+    <p class="footer-note">
+      If anything in this flow is unclear, ping management in <code>#🗒️・planning</code> before publishing.
+      Consistency keeps SoraSkyClub events easy to find and fun to follow.
+    </p>
+  </main>
+</body>
+</html>
