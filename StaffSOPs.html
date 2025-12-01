@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SoraSkyClub – Staff SOP Handbook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050509;
+      --bg-alt: #11111a;
+      --accent: #ff4db8;
+      --accent-soft: #ff4db833;
+      --text: #f4f4f7;
+      --muted: #a0a0b5;
+      --border: #272738;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #181828 0, var(--bg) 40%);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 2rem 1rem 4rem;
+    }
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, #0b0b12, #050509);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.65);
+      padding: 2.5rem 2rem 3rem;
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    h1::before {
+      content: "☁";
+      font-size: 1.6rem;
+      color: var(--accent);
+      filter: drop-shadow(0 0 10px var(--accent));
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      margin-top: 1.1rem;
+      font-size: 1.02rem;
+      color: var(--accent);
+    }
+    p {
+      color: var(--muted);
+      margin: 0.3rem 0 0.8rem;
+    }
+    strong { color: #ffffff; }
+    .tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.3rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: #0f0f1a;
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid var(--accent-soft);
+      color: var(--muted);
+    }
+    .pill span {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 6px var(--accent);
+    }
+
+    .section-box {
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(8, 8, 14, 0.95);
+      padding: 1rem 1.1rem;
+      margin-top: 1rem;
+    }
+
+    .divider {
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      margin: 0.5rem 0 0.9rem;
+    }
+
+    ul {
+      padding-left: 1.3rem;
+      margin-top: 0.4rem;
+      margin-bottom: 0.7rem;
+    }
+    li {
+      margin: 0.2rem 0;
+      color: var(--muted);
+    }
+
+    .emoji-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .emoji-list li {
+      position: relative;
+      padding-left: 1.6rem;
+    }
+    .emoji-list li span.emoji {
+      position: absolute;
+      left: 0;
+      top: 0.03rem;
+    }
+    .emoji-list li span.label {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .checklist li {
+      list-style: none;
+      position: relative;
+      padding-left: 1.4rem;
+    }
+    .checklist li::before {
+      content: "☑";
+      position: absolute;
+      left: 0;
+      top: 0.05rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    .callout {
+      border-radius: 12px;
+      border: 1px solid var(--accent-soft);
+      background: rgba(10, 10, 18, 0.85);
+      padding: 0.8rem 1rem;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.85rem;
+    }
+    .callout.warn {
+      border-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.12);
+    }
+    .callout strong {
+      color: var(--accent);
+    }
+
+    .toc {
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(9, 9, 18, 0.98);
+      padding: 1rem 1.2rem;
+      margin: 0.5rem 0 1.8rem;
+    }
+    .toc-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.4rem 1rem;
+    }
+    .toc a {
+      text-decoration: none;
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: rgba(255,255,255,0.01);
+    }
+    .toc a:hover {
+      border-color: var(--accent-soft);
+      color: var(--text);
+      box-shadow: 0 0 10px rgba(255,77,184,0.25);
+    }
+
+    .top-link {
+      display: inline-block;
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    table.role-chart {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .role-chart th,
+    .role-chart td {
+      padding: 0.6rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #171728;
+    }
+    .role-chart thead th {
+      background: #0f0f1f;
+      font-weight: 600;
+    }
+    .role-chart tbody tr:nth-child(even) td {
+      background: #080812;
+    }
+
+    .footer-note {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px dashed var(--border);
+      padding-top: 0.75rem;
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 1.7rem 1.2rem 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page" id="top">
+    <div class="pill"><span></span> SoraSkyClub • Staff SOP Handbook</div>
+    <h1>Staff SOPs – General Handbook</h1>
+    <p class="tagline">
+      A centralized overview of how <strong>all SoraSkyClub staff roles</strong> operate together: Security, Hosts,
+      Bartenders, Performers, World Creators, and Social Media Managers.
+    </p>
+
+    <section class="toc">
+      <div class="toc-title">Table of Contents</div>
+      <div class="toc-grid">
+        <a href="#mod">🛡️ Moderator / Security SOP</a>
+        <a href="#host">🎤 Event Host SOP</a>
+        <a href="#bartender">🍸 Bartender SOP</a>
+        <a href="#performer">🎭 Performer SOP</a>
+        <a href="#creator">🧱 World Creator SOP</a>
+        <a href="#smm">📣 Social Media Manager SOP</a>
+        <a href="#policies">📜 Policies – Group Join & NSFW Avatars</a>
+        <a href="#overview">🗂️ Quick Role Overview Chart</a>
+      </div>
+    </section>
+
+    <!-- Moderator / Security -->
+    <h2 id="mod">🛡️ Moderator / Security SOP</h2>
+    <div class="divider"></div>
+    <div class="section-box">
+      <ul class="emoji-list">
+        <li><span class="emoji">✅</span> <span class="label">Role Overview:</span> Community managers + security across VRChat & Discord, keeping the space safe and respectful.</li>
+        <li><span class="emoji">🔐</span> <span class="label">Gatekeeping & Age Verification:</span> Require VRChat <em>Verified 18+</em> tag or verbal DOB. No “bio proof.” If they can’t verify 18+, deny entry.</li>
+        <li><span class="emoji">👥</span> <span class="label">Group Invitation:</span> Invite eligible entrants to the main SoraSkyClub VRChat group before they join the venue instance.</li>
+        <li><span class="emoji">📝</span> <span class="label">Logging:</span> Record denied entries, verification checks, kicks, and bans according to the moderation logging SOP.</li>
+        <li><span class="emoji">📏</span> <span class="label">Rule Enforcement:</span> Apply rules consistently; warn privately or publicly depending on severity; always log significant actions.</li>
+        <li><span class="emoji">🚧</span> <span class="label">Security & Crowd Control:</span> Watch for disruptions, harassment, or unsafe behavior. Remove, mute, kick, or ban based on policy and escalate to Admins when needed.</li>
+        <li><span class="emoji">🎥</span> <span class="label">Evidence Capture:</span> Use OBS, GPU instant replay, or clipping tools when possible; attach clips / timestamps to case logs.</li>
+        <li><span class="emoji">🚫</span> <span class="label">Zero Tolerance:</span> No harassment, bigotry, or staff abuse. Minor issues may get one warning; serious offenses can go straight to removal/ban.</li>
+        <li><span class="emoji">💬</span> <span class="label">Professionalism:</span> Keep communication calm and respectful, even under pressure. You represent SoraSkyClub in every interaction.</li>
+        <li><span class="emoji">🛎️</span> <span class="label">Pre-Event Response:</span> When a Host posts a call to action in <code>#🗒️・planning</code>, acknowledge if you can attend so staffing coverage is clear.</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Group Join Policy:</strong> Accept group join requests by default. Everyone is considered in good standing
+        unless you <em>know for a fact</em> they are under 18 or already banned. Denials should be rare and logged with a
+        short explanation.
+      </div>
+
+      <a href="#top" class="top-link">↑ Back to top</a>
+    </div>
+
+    <!-- Event Host -->
+    <h2 id="host">🎤 Event Host SOP</h2>
+    <div class="divider"></div>
+    <div class="section-box">
+      <ul class="emoji-list">
+        <li><span class="emoji">✅</span> <span class="label">Role Overview:</span> Plan, manage, and run events; keep energy high and flow smooth; support mods, bouncers, and performers.</li>
+        <li><span class="emoji">👥</span> <span class="label">Instance Staffing Requirement:</span> Events should run with at least <strong>1 Host</strong> and <strong>3 active Bouncers</strong>. If staffing dips below this, pause new entries until coverage returns.</li>
+        <li><span class="emoji">🎛️</span> <span class="label">Host Role in the World:</span> Hosts hold the in-world <strong>Host</strong> role and may temporarily grant it to dancers when collaboration requires stage or announcement access.</li>
+        <li><span class="emoji">🛎️</span> <span class="label">Pre-Event Prep:</span> Use <code>#🗒️・planning</code> to start a call to action, confirm staff and performers, test the world, and align timing across VRChat, Discord, and event listings.</li>
+        <li><span class="emoji">📢</span> <span class="label">Announcements & Engagement:</span>
+          <ul>
+            <li>Promote the SoraSkyClub VRChat group every <strong>30–45 minutes</strong>.</li>
+            <li>Introduce and thank performers before/after each set.</li>
+            <li>Once per hour, mention staff applications or roles if recruitment is open.</li>
+          </ul>
+        </li>
+        <li><span class="emoji">🕺</span> <span class="label">Dancer Empowerment:</span>
+          <ul>
+            <li>Dancers may make <strong>one announcement per hour</strong> when given temporary Host permissions.</li>
+            <li>Dancers can grant temporary <strong>Performer</strong> permissions to guests they’re dancing with, then revoke them when done.</li>
+          </ul>
+        </li>
+        <li><span class="emoji">🎥</span> <span class="label">Recording:</span> Hosts are strongly encouraged to run OBS or instant replay both for event highlights and for potential moderation evidence.</li>
+        <li><span class="emoji">🤝</span> <span class="label">Team Communication:</span> Coordinate with Bouncers, Bartenders, and Admins; call out any safety concerns; keep staff informed about schedule changes.</li>
+        <li><span class="emoji">🧹</span> <span class="label">Post-Event:</span> Facilitate cool-down, thank attendees, help coordinate after-event synopses, and share clips or screenshots for socials.</li>
+        <li><span class="emoji">🌟</span> <span class="label">Professionalism:</span> Maintain an upbeat, inclusive tone. Avoid spammy callouts or pressure; the goal is comfort + hype, not stress.</li>
+      </ul>
+
+      <a href="#top" class="top-link">↑ Back to top</a>
+    </div>
+
+    <!-- Bartender -->
+    <h2 id="bartender">🍸 Bartender SOP</h2>
+    <div class="divider"></div>
+    <div class="section-box">
+      <ul class="emoji-list">
+        <li><span class="emoji">🎭</span> <span class="label">Role Overview:</span> Provide roleplay flavor and guest comfort at the bar while quietly watching for safety issues.</li>
+        <li><span class="emoji">🧰</span> <span class="label">Pre-Shift:</span> Get familiar with any bar props, review safety protocols (especially Angel Shot), and know which staff are on duty.</li>
+        <li><span class="emoji">🧃</span> <span class="label">Guest Engagement:</span> Greet guests, roleplay serving drinks, keep conversation friendly and inclusive, and redirect drama or discomfort toward staff support.</li>
+        <li><span class="emoji">🆘</span> <span class="label">Angel Shot System:</span> A discreet way for guests to ask for help.
+          <ul>
+            <li><strong>Neat</strong> – Escort me out discreetly.</li>
+            <li><strong>With Lime</strong> – Call a moderator / bouncer.</li>
+            <li><strong>On the Rocks</strong> – I need a safe space or private area / staff member.</li>
+          </ul>
+        </li>
+        <li><span class="emoji">🧭</span> <span class="label">Response:</span> Stay calm, avoid drawing attention, ping security or hosts, and remain with the guest until situation is handed off.</li>
+        <li><span class="emoji">🛡️</span> <span class="label">Harassment Handling:</span> Don’t confront alone. Bring in Bouncers/Mods and support the guest until they feel safe again.</li>
+        <li><span class="emoji">📏</span> <span class="label">Rule Support:</span> Offer gentle reminders if guests get too rowdy; escalate to security when necessary.</li>
+        <li><span class="emoji">🤝</span> <span class="label">Comms & Debrief:</span> Inform staff of any Angel Shot situations or near-miss incidents so they’re logged and trends can be tracked.</li>
+        <li><span class="emoji">🧹</span> <span class="label">Post-Shift:</span> “Close down” your area, step out of character, and share feedback on what worked or felt off.</li>
+      </ul>
+
+      <a href="#top" class="top-link">↑ Back to top</a>
+    </div>
+
+    <!-- Performer -->
+    <h2 id="performer">🎭 Performer SOP</h2>
+    <div class="divider"></div>
+    <div class="section-box">
+      <ul class="emoji-list">
+        <li><span class="emoji">✨</span> <span class="label">Role Overview:</span> Deliver entertaining sets or dances while respecting safety, boundaries, and world limitations.</li>
+        <li><span class="emoji">🎤</span> <span class="label">Host Coordination:</span> Wait for the Host to cue you in. Hosts handle introductions and outros so the show flow feels intentional.</li>
+        <li><span class="emoji">🩰</span> <span class="label">Dancer Guidelines:</span>
+          <ul>
+            <li>Warm up, respect personal space, and be mindful of colliders and performance limitations.</li>
+            <li>When given temporary Host, limit yourself to <strong>one announcement per hour</strong>.</li>
+            <li>Grant temporary Performer permissions only to the guest you are currently dancing with and revoke when done.</li>
+          </ul>
+        </li>
+        <li><span class="emoji">🎭</span> <span class="label">Stage Etiquette:</span> Keep the stage clear between sets, avoid cluttering the view, and coordinate hand-offs with other performers.</li>
+        <li><span class="emoji">🏁</span> <span class="label">Finishing a Set:</span> Thank the audience, exit cleanly, and stay available for feedback or encore if the Host asks.</li>
+      </ul>
+
+      <a href="#top" class="top-link">↑ Back to top</a>
+    </div>
+
+    <!-- World Creator -->
+    <h2 id="creator">🧱 World Creator SOP</h2>
+    <div class="divider"></div>
+    <div class="section-box">
+      <ul class="emoji-list">
+        <li><span class="emoji">🌿</span> <span class="label">Repo & Project Hygiene:</span> Use feature branches, descriptive commit messages, and comments for non-obvious behavior in scripts or prefabs.</li>
+        <li><span class="emoji">🔀</span> <span class="label">Change Approval:</span> Merges into <strong>main</strong> require review and approval (e.g. by SoraisHollow or designated lead).</li>
+        <li><span class="emoji">🧪</span> <span class="label">Testing:</span> Verify changes in Unity Play Mode and in a test VRChat world. Check ownership, UdonSync behaviors, late join, and Quest vs PC performance.</li>
+        <li><span class="emoji">🔎</span> <span class="label">Verification Checklist:</span> No console spam in Play Mode, lighting baked as needed, portals and spawn points set, and safety tools (like safety zones or mirrors) functioning.</li>
+        <li><span class="emoji">📝</span> <span class="label">Documentation:</span> Update any README / changelog; provide screenshots or short clips when opening pull requests or sending builds to staff.</li>
+      </ul>
+
+      <a href="#top" class="top-link">↑ Back to top</a>
+    </div>
+
+    <!-- Social Media Manager -->
+    <h2 id="smm">📣 Social Media Manager SOP</h2>
+    <div class="divider"></div>
+    <div class="section-box">
+      <ul class="emoji-list">
+        <li><span class="emoji">🗓️</span> <span class="label">Core Duties:</span> Maintain an event calendar, schedule posts around events, and capture/curate photos or short clips for announcements and recaps.</li>
+        <li><span class="emoji">✅</span> <span class="label">Consent:</span> Do <strong>not</strong> post or reuse community content without clear approval from the original poster / people visible.</li>
+        <li><span class="emoji">🧭</span> <span class="label">Accuracy:</span> Double-check dates, times (including time zones), and event names. Make sure links point to the correct VRChat group or world.</li>
+        <li><span class="emoji">🤝</span> <span class="label">Voice & Representation:</span> Match the SoraSkyClub vibe: cozy, neon, kind, and inclusive. Highlight staff and community respectfully with correct handles/pronouns.</li>
+        <li><span class="emoji">🛡️</span> <span class="label">Safety & Escalation:</span> Avoid feeding drama. If a post or comment becomes a safety or privacy issue, loop in moderators and remove/adjust content as directed.</li>
+      </ul>
+
+      <a href="#top" class="top-link">↑ Back to top</a>
+    </div>
+
+    <!-- Policies -->
+    <h2 id="policies">📜 Policies – Group Join & NSFW Avatars</h2>
+    <div class="divider"></div>
+    <div class="section-box">
+      <div class="callout">
+        <strong>Group Join & Standing:</strong> Group requests are accepted by default unless the person is known to be under 18 or banned. When in doubt, ask an Admin. Serious incidents should be reflected on the user’s profile status (Good standing, Watchlist, Terminated, Banned) via the Admin SOP.
+      </div>
+
+      <div class="callout warn">
+        <strong>NSFW Avatars:</strong> NSFW includes nude avatars, underwear/lingerie-only outfits, transparent meshes exposing nipples or genitals, and explicit toggles or actions. NSFW avatars are not allowed in public / common spaces.<br><br>
+        <strong>Enforcement:</strong> Politely ask users to switch to a SFW avatar or move to an appropriate private instance. If they refuse, warn once (if appropriate), then escalate to kick/ban according to the moderation SOP.
+      </div>
+
+      <a href="#top" class="top-link">↑ Back to top</a>
+    </div>
+
+    <!-- Overview -->
+    <h2 id="overview">🗂️ Quick Role Overview Chart</h2>
+    <div class="divider"></div>
+    <div class="section-box">
+      <table class="role-chart">
+        <thead>
+          <tr>
+            <th>Emoji</th>
+            <th>Role</th>
+            <th>Key Responsibilities</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🛡️</td>
+            <td>Moderator / Security</td>
+            <td>Verify 18+, manage crowd control, enforce rules, log incidents, capture evidence when possible.</td>
+          </tr>
+          <tr>
+            <td>🎤</td>
+            <td>Event Host</td>
+            <td>Plan and run events, coordinate staff, handle announcements, keep vibes high and structure clear.</td>
+          </tr>
+          <tr>
+            <td>🍸</td>
+            <td>Bartender</td>
+            <td>Roleplay service, watch for safety concerns, handle Angel Shot requests, escalate issues discreetly.</td>
+          </tr>
+          <tr>
+            <td>🎭</td>
+            <td>Performer</td>
+            <td>Deliver engaging sets, coordinate with Hosts, respect boundaries and world limits, support show flow.</td>
+          </tr>
+          <tr>
+            <td>🧱</td>
+            <td>World Creator</td>
+            <td>Develop and maintain worlds, test thoroughly, manage branches and pull requests, keep documentation updated.</td>
+          </tr>
+          <tr>
+            <td>📣</td>
+            <td>Social Media Manager</td>
+            <td>Plan and schedule posts, ensure consent, maintain accurate info, represent SoraSkyClub’s brand and safety standards.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a href="#top" class="top-link">↑ Back to top</a>
+    </div>
+
+    <p class="footer-note">
+      This handbook is a living document. As SoraSkyClub grows, SOPs may be updated—staff should check for new versions and
+      bring suggestions to leadership when processes need improvement.
+    </p>
+  </main>
+</body>
+</html>
