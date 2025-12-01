@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SoraSkyClub – Income & Revenue Policies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050509;
+      --bg-alt: #11111a;
+      --accent: #ff4db8;
+      --accent-soft: #ff4db833;
+      --text: #f4f4f7;
+      --muted: #a0a0b5;
+      --border: #272738;
+    }
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #181828 0, var(--bg) 40%);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, #0b0b12, #050509);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.65);
+      padding: 2.5rem 2rem 3rem;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    h1::before {
+      content: "☁";
+      font-size: 1.6rem;
+      color: var(--accent);
+      filter: drop-shadow(0 0 10px var(--accent));
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      margin-top: 1.1rem;
+      font-size: 1.02rem;
+      color: var(--accent);
+    }
+
+    p {
+      color: var(--muted);
+      margin: 0.3rem 0 0.8rem;
+    }
+    strong { color: #ffffff; }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.3rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: #0f0f1a;
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid var(--accent-soft);
+      color: var(--muted);
+    }
+    .pill span {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 6px var(--accent);
+    }
+
+    .section-box {
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(8, 8, 14, 0.95);
+      padding: 1rem 1.1rem;
+      margin-top: 1rem;
+    }
+
+    .divider {
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      margin: 0.5rem 0 0.9rem;
+    }
+
+    ul {
+      padding-left: 1.3rem;
+      margin-top: 0.4rem;
+      margin-bottom: 0.7rem;
+    }
+    li {
+      margin: 0.2rem 0;
+      color: var(--muted);
+    }
+
+    .emoji-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .emoji-list li {
+      position: relative;
+      padding-left: 1.6rem;
+    }
+    .emoji-list li span.emoji {
+      position: absolute;
+      left: 0;
+      top: 0.03rem;
+    }
+    .emoji-list li span.label {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .checklist li {
+      list-style: none;
+      position: relative;
+      padding-left: 1.4rem;
+    }
+    .checklist li::before {
+      content: "☑";
+      position: absolute;
+      left: 0;
+      top: 0.05rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    table.chart {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .chart th,
+    .chart td {
+      padding: 0.6rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #171728;
+    }
+    .chart thead th {
+      background: #0f0f1f;
+      font-weight: 600;
+    }
+    .chart tbody tr:nth-child(even) td {
+      background: #080812;
+    }
+
+    .callout {
+      border-radius: 12px;
+      border: 1px solid var(--accent-soft);
+      background: rgba(10, 10, 18, 0.85);
+      padding: 0.8rem 1rem;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.85rem;
+    }
+    .callout strong {
+      color: var(--accent);
+    }
+
+    .footer-note {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px dashed var(--border);
+      padding-top: 0.75rem;
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 1.7rem 1.2rem 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="pill"><span></span> SoraSkyClub • Income & Revenue Policies</div>
+    <h1>SoraSkyClub Income Distribution & Policy Guide</h1>
+    <p class="tagline">
+      This page explains how SoraSkyClub distributes NET income from memberships, merchandise, and social media,
+      and defines key terms and ownership policies.
+    </p>
+
+    <!-- Membership NET Income Distribution -->
+    <h2>1. Membership NET Income Distribution</h2>
+    <div class="divider"></div>
+
+    <div class="section-box">
+      <p>
+        Membership income is distributed from a shared <strong>Membership NET Income Pool</strong>.
+        The pie chart in the original document shows how each staff group and SoraSkyClub receive a
+        percentage of this pool. :contentReference[oaicite:0]{index=0}
+      </p>
+
+      <h3>1.1 Percentage Breakdown (Membership NET Income)</h3>
+      <table class="chart">
+        <thead>
+          <tr>
+            <th>Group</th>
+            <th>Share of NET Membership Income</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Performers + Bartenders</td>
+            <td>15%</td>
+            <td>Shared pool for all performers and bartenders.</td>
+          </tr>
+          <tr>
+            <td>Bouncers</td>
+            <td>20%</td>
+            <td>Security / moderation staff.</td>
+          </tr>
+          <tr>
+            <td>Hosts</td>
+            <td>30%</td>
+            <td>Event hosts and lead event staff.</td>
+          </tr>
+          <tr>
+            <td>World Devs</td>
+            <td>30%</td>
+            <td>World creators / developers.</td>
+          </tr>
+          <tr>
+            <td>SoraSkyClub</td>
+            <td>5%</td>
+            <td>SSC remainder for operations and reinvestment.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>1.2 Example Membership Distribution</h3>
+      <p>
+        If SoraSkyClub earns <strong>$10,000 NET membership income</strong>, distribution is: :contentReference[oaicite:1]{index=1}
+      </p>
+      <ul>
+        <li><strong>Performers + Bartenders (15%)</strong>: $1,500</li>
+        <li><strong>Bouncers (20%)</strong>: $2,000</li>
+        <li><strong>Hosts (30%)</strong>: $3,000</li>
+        <li><strong>World Devs (30%)</strong>: $3,000</li>
+        <li><strong>SoraSkyClub (5%)</strong>: $500</li>
+      </ul>
+
+      <h3>1.3 Membership Pool Summary</h3>
+      <ul class="checklist">
+        <li>All staff shares come from <strong>NET income</strong> (after fees & required expenses).</li>
+        <li>Performers + Bartenders share a combined <strong>15%</strong> pool.</li>
+        <li>Bouncers receive <strong>20%</strong>, Hosts <strong>30%</strong>, World Devs <strong>30%</strong>.</li>
+        <li>SoraSkyClub receives the remaining <strong>5%</strong> of the membership pool.</li>
+      </ul>
+    </div>
+
+    <!-- Merchandise NET Profit Distribution -->
+    <h2>2. Merchandise NET Profit Distribution</h2>
+    <div class="divider"></div>
+
+    <div class="section-box">
+      <p>
+        Merchandise based on artwork or brands uses a separate NET profit split. The pie chart in the
+        PDF shows how <strong>Artist</strong>, <strong>Performer/Brand</strong>, and <strong>SoraSkyClub</strong>
+        divide the revenue. :contentReference[oaicite:2]{index=2}
+      </p>
+
+      <h3>2.1 Percentage Breakdown (Merch NET Profit)</h3>
+      <table class="chart">
+        <thead>
+          <tr>
+            <th>Recipient</th>
+            <th>Share of NET Merchandise Profit</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Artist</td>
+            <td>60%</td>
+            <td>The creator of the artwork used on the product.</td>
+          </tr>
+          <tr>
+            <td>Performer / Brand</td>
+            <td>20%</td>
+            <td>Performer or brand whose name/image is featured, if different from the artist.</td>
+          </tr>
+          <tr>
+            <td>SoraSkyClub</td>
+            <td>20%</td>
+            <td>SSC remainder from merch NET profit.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>2.2 Example Merchandise Distribution</h3>
+      <p>
+        If a product generates <strong>$2,000 NET profit</strong>, the split is: :contentReference[oaicite:3]{index=3}
+      </p>
+      <ul>
+        <li><strong>Artist (60%)</strong>: $1,200</li>
+        <li><strong>Performer/Brand (20%)</strong>: $400</li>
+        <li><strong>SoraSkyClub (20%)</strong>: $400</li>
+      </ul>
+
+      <h3>2.3 Special Case: Artist = Performer/Brand</h3>
+      <p>
+        When the <strong>Artist and Performer/Brand are the same person</strong>, they receive a unified total of
+        <strong>75% of the NET profit</strong>, with SoraSkyClub receiving the remainder. :contentReference[oaicite:4]{index=4}
+      </p>
+      <ul>
+        <li>For $2,000 NET profit:
+          <ul>
+            <li><strong>Artist = Performer/Brand (75%)</strong>: $1,500</li>
+            <li><strong>SoraSkyClub (25%)</strong>: $500</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>2.4 Merchandise Revenue Policy Summary</h3>
+      <ul class="checklist">
+        <li>Artists receive <strong>60%</strong> NET profit on their artwork-based merchandise.</li>
+        <li>Performers/brands receive an additional <strong>20%</strong>.</li>
+        <li>If performer = artist, they receive <strong>75%</strong> total on that merch’s NET profit.</li>
+        <li>SoraSkyClub keeps the remainder for operations and reinvestment.</li>
+      </ul>
+    </div>
+
+    <!-- Social Media NET Income Distribution -->
+    <h2>3. Social Media NET Income Distribution</h2>
+    <div class="divider"></div>
+
+    <div class="section-box">
+      <p>
+        Social media pages (such as dedicated SSC profiles or project accounts) have their own income split
+        between the Social Media Manager and SoraSkyClub. :contentReference[oaicite:5]{index=5}
+      </p>
+
+      <h3>3.1 Percentage Breakdown (Social Media NET Income)</h3>
+      <table class="chart">
+        <thead>
+          <tr>
+            <th>Recipient</th>
+            <th>Share of NET Income</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Social Media Manager</td>
+            <td>65%</td>
+            <td>Manager assigned to that specific page/profile.</td>
+          </tr>
+          <tr>
+            <td>SoraSkyClub</td>
+            <td>35%</td>
+            <td>SSC remainder from that page’s NET income.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>3.2 Example Social Media Distribution</h3>
+      <p>
+        If a social page generates <strong>$1,000 NET</strong>, the split is: :contentReference[oaicite:6]{index=6}
+      </p>
+      <ul>
+        <li><strong>Social Media Manager (65%)</strong>: $650</li>
+        <li><strong>SoraSkyClub (35%)</strong>: $350</li>
+      </ul>
+
+      <h3>3.3 Social Media Manager Policy Summary</h3>
+      <ul class="checklist">
+        <li>Managers receive <strong>65% of the NET income</strong> generated by the social media pages they run.</li>
+        <li>NET income is always calculated <strong>after fees and required expenses</strong>.</li>
+        <li>Pages and assignments should be clearly documented so everyone knows who manages which profile.</li>
+      </ul>
+    </div>
+
+    <!-- IP Ownership & Definitions -->
+    <h2>4. IP Ownership & Key Definitions</h2>
+    <div class="divider"></div>
+
+    <div class="section-box">
+      <h3>4.1 IP Ownership Clause</h3>
+      <p>
+        <strong>All artwork and brand identity belong to the creator</strong> unless ownership is explicitly reassigned
+        through a Terms of Service or contract. SoraSkyClub respects creator rights and only uses assets under the
+        agreed terms. :contentReference[oaicite:7]{index=7}
+      </p>
+
+      <h3>4.2 Definition – NET Income</h3>
+      <p>
+        <strong>NET Income</strong> means income <em>after</em> fees, processing costs, and required expenses are deducted.
+        Examples of what comes out before NET is calculated:
+      </p>
+      <ul>
+        <li>Platform fees (e.g., store or payment processor fees).</li>
+        <li>Payment processing charges and taxes as applicable.</li>
+        <li>Production, shipping, or fulfillment costs for merchandise.</li>
+        <li>Any other required expenses tied directly to generating that income.</li>
+      </ul>
+      <p>
+        All percentages and examples in this policy refer to <strong>NET income</strong>, not gross revenue. :contentReference[oaicite:8]{index=8}
+      </p>
+    </div>
+
+    <p class="footer-note">
+      This income policy page is a living document. If SoraSkyClub’s structure or agreements change, the percentages
+      and examples here may be updated to match new arrangements. When in doubt, leadership should clarify how a
+      specific project, collab, or product fits within these rules.
+    </p>
+  </main>
+</body>
+</html>
