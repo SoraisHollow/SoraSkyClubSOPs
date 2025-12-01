@@ -24,8 +24,9 @@
       line-height: 1.5;
       padding: 2rem 1rem 4rem;
     }
+
     .page {
-      max-width: 960px;
+      max-width: 980px;
       margin: 0 auto;
       background: linear-gradient(145deg, #0b0b12, #050509);
       border-radius: 18px;
@@ -34,10 +35,11 @@
       padding: 2.5rem 2rem 3rem;
     }
 
-    h1, h2, h3 {
+    h1, h2 {
       font-weight: 700;
       letter-spacing: 0.04em;
     }
+
     h1 {
       font-size: 2rem;
       margin-top: 0;
@@ -51,28 +53,16 @@
       color: var(--accent);
       filter: drop-shadow(0 0 10px var(--accent));
     }
-    h2 {
-      margin-top: 2rem;
-      font-size: 1.3rem;
-      padding-bottom: 0.35rem;
-      border-bottom: 1px solid var(--border);
-    }
-    h3 {
-      font-size: 1.05rem;
-      color: var(--accent);
-      margin-top: 0;
-    }
 
-    p {
-      color: var(--muted);
-      margin: 0.3rem 0 0.8rem;
+    h2.intro-heading {
+      font-size: 1.15rem;
+      margin: 1.8rem 0 0.4rem;
     }
-    strong { color: #fff; }
 
     .tagline {
-      font-size: 0.9rem;
+      font-size: 0.94rem;
       color: var(--muted);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.3rem;
     }
 
     .pill {
@@ -100,99 +90,106 @@
       border-radius: 14px;
       border: 1px solid var(--border);
       background: rgba(8, 8, 14, 0.95);
-      padding: 1rem 1.1rem;
-      margin-top: 1rem;
+      padding: 1rem 1.1rem 1.1rem;
+      margin-top: 0.5rem;
     }
 
-    ul {
-      padding-left: 1.2rem;
-      margin-top: 0.4rem;
-      margin-bottom: 0.7rem;
+    .section-box p {
+      margin: 0.35rem 0 0.7rem;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
-    li {
-      margin: 0.15rem 0;
+
+    .section-box ul {
+      margin: 0.3rem 0 0.3rem;
+      padding-left: 1.1rem;
+      font-size: 0.88rem;
       color: var(--muted);
     }
-    .checklist li {
-      list-style: none;
-      position: relative;
-      padding-left: 1.4rem;
+    .section-box li {
+      margin: 0.15rem 0;
     }
-    .checklist li::before {
-      content: "☑";
-      position: absolute;
-      left: 0;
-      top: 0.05rem;
-      font-size: 0.8rem;
-      color: var(--accent);
+
+    .section-label {
+      margin-top: 2rem;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 0.7rem;
     }
 
     .card {
       border-radius: 14px;
       border: 1px solid var(--border);
-      background: radial-gradient(circle at top left, rgba(255,77,184,0.08), rgba(8,8,14,0.98));
-      padding: 1.1rem 1.1rem 1.3rem;
+      background: rgba(8, 8, 14, 0.95);
+      padding: 1rem 1.1rem 1.1rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 210px;
     }
 
-    .badge {
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.1rem;
-    }
-
-    .btn-row {
-      margin-top: 0.9rem;
+    .card-header {
       display: flex;
+      align-items: center;
       gap: 0.5rem;
-      flex-wrap: wrap;
+      margin-bottom: 0.3rem;
+    }
+    .card-emoji {
+      font-size: 1.2rem;
+    }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .card-body {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .card ul {
+      margin: 0.4rem 0 0.7rem;
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .card li {
+      margin: 0.2rem 0;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.42rem 0.9rem;
+      gap: 0.35rem;
+      padding: 0.45rem 0.9rem;
       border-radius: 999px;
       border: 1px solid var(--accent-soft);
-      background: rgba(255,77,184,0.12);
+      background: linear-gradient(135deg, #1a0f1f, #120714);
       color: var(--text);
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
-      cursor: pointer;
-      white-space: nowrap;
+    }
+    .btn span.icon {
+      font-size: 0.95rem;
+      color: var(--accent);
     }
     .btn:hover {
-      transform: translateY(-1px);
-      background: rgba(255,77,184,0.18);
-      box-shadow: 0 0 12px rgba(255,77,184,0.4);
-    }
-
-    .btn.secondary {
-      border-color: var(--border);
-      background: #0b0b14;
-      letter-spacing: 0.08em;
-      text-transform: none;
-      font-size: 0.78rem;
+      box-shadow: 0 0 18px rgba(255,77,184,0.35);
+      border-color: var(--accent);
     }
 
     .footer-note {
-      margin-top: 2rem;
+      margin-top: 2.3rem;
       font-size: 0.8rem;
       color: var(--muted);
       border-top: 1px dashed var(--border);
@@ -207,117 +204,145 @@
 <body>
   <main class="page">
     <div class="pill"><span></span> SoraSkyClub • Staff SOP Hub</div>
-    <h1>Staff Standards & SOP Navigation</h1>
+    <h1>Staff SOP & Policy Center</h1>
     <p class="tagline">
-      Welcome to the <strong>SoraSkyClub</strong> staff hub.  
-      This page explains what we look for in our team and links you to the SOPs for each core role:
-      Hosts, Bouncers, and Admins.
+      This hub is where we keep our expectations, procedures, and policies for SoraSkyClub staff.
+      If you’re ever unsure how to handle something, this is your first stop.
     </p>
 
-    <section class="section-box">
-      <h2>What We’re Looking For in Staff</h2>
+    <!-- Intro / What we're looking for -->
+    <h2 class="intro-heading">What We’re Looking For In Staff</h2>
+    <div class="section-box">
       <p>
-        Every SoraSkyClub staff member represents the brand, the community, and the vibe of our worlds.
-        No matter your role, we expect:
+        SoraSkyClub staff are the heartbeat of the community. Titles and roles matter, but what matters
+        most is <strong>how</strong> you show up for others. In every role, we’re looking for:
       </p>
-      <ul class="checklist">
-        <li><strong>Reliability:</strong> Show up on time, follow through on what you say you’ll do.</li>
-        <li><strong>Clear Communication:</strong> Use the planning and staff channels, log what happened, ask when unsure.</li>
-        <li><strong>Professionalism:</strong> Friendly, calm, and respectful—even when someone else isn’t.</li>
-        <li><strong>Consistent Logging:</strong> Events and infractions should always be recorded in Notion.</li>
-        <li><strong>Team Mindset:</strong> You are never “alone on duty.” Keep admins and other staff in the loop.</li>
-        <li><strong>Comfort & Safety:</strong> Our spaces should feel safe, inclusive, and welcoming.</li>
-        <li><strong>Alignment with SOPs:</strong> Learn your role’s SOP and use it every time. If something is missing or confusing, tell us.</li>
+      <ul>
+        <li><strong>Reliability</strong> – If you commit to a shift or event, you show up or communicate early if you can’t.</li>
+        <li><strong>Communication</strong> – You keep Hosts, Mods, and fellow staff in the loop and use staff channels respectfully.</li>
+        <li><strong>Professionalism</strong> – Chill, kind, and drama-free. You represent the club any time you’re in a staff role.</li>
+        <li><strong>Boundary Respect</strong> – You honor consent, comfort, and safety—your own and everyone else’s.</li>
+        <li><strong>Team Mindset</strong> – You support other staff, back up calls publicly, and sort disagreements privately.</li>
+        <li><strong>Growth</strong> – You’re willing to learn, accept feedback, and help improve how we run things.</li>
       </ul>
-    </section>
+      <p>
+        These expectations apply to <strong>all</strong> staff: Hosts, Bouncers, Bartenders, Performers, Creators,
+        Social Media Managers, and Admins.
+      </p>
+    </div>
 
-    <h2>Role SOPs</h2>
-    <p>
-      Choose the SOP that matches your primary role.  
-      Many staff will read more than one so everyone understands how the whole pipeline fits together.
-    </p>
-
-    <section class="cards">
-      <!-- Hosts & Up -->
-      <article class="card">
-        <div>
-          <div class="badge">Events • Hosts & Above</div>
-          <h3>Hosts & Event Leads</h3>
-          <p>
-            Plan events, gather <strong>Who / What / When / Where</strong> in Discord, and turn that into
-            properly posted events across Notion, VRChat, Discord, and Fourthwall.
-          </p>
-          <ul>
-            <li>Own the event pipeline from idea to announcement.</li>
-            <li>Keep Notion’s <strong>Events</strong> database accurate.</li>
-            <li>Encourage post-event synopses & highlights.</li>
-          </ul>
-        </div>
-        <div class="btn-row">
-          <!-- Update hrefs to match your actual filenames/paths -->
-          <a class="btn" href="Host Event making.html">Open Host SOP</a>
-          <a class="btn secondary" href="#top">Role focus: Visibility & Organization</a>
-        </div>
-      </article>
-
-      <!-- Bouncers -->
-      <article class="card">
-        <div>
-          <div class="badge">Security • Moderation</div>
-          <h3>Bouncers & Security</h3>
-          <p>
-            Handle in-world behavior, keep guests safe, and log every significant infraction
-            so Admins have a clear, evidence-backed record to review.
-          </p>
-          <ul>
-            <li>Create clean, complete Notion case files.</li>
-            <li>Upload screenshots and evidence correctly.</li>
-            <li>Stay calm, neutral, and consistent.</li>
-          </ul>
-        </div>
-        <div class="btn-row">
-          <!-- Update href to your actual file -->
-          <a class="btn" href="Moderation.html">Open Bouncer SOP</a>
-          <a class="btn secondary" href="#top">Role focus: Safety & Documentation</a>
-        </div>
-      </article>
-
-      <!-- Admins -->
-      <article class="card">
-        <div>
-          <div class="badge">Oversight • QA</div>
-          <h3>Admins & Leadership</h3>
-          <p>
-            Review events and moderation cases in Notion, triage by severity,
-            provide feedback to staff, and make sure the whole system runs smoothly.
-          </p>
-          <ul>
-            <li>Check that events & cases follow SOPs.</li>
-            <li>Mark severity (Critical / Non-severe) and status.</li>
-            <li>Close, follow up, or escalate as needed.</li>
-          </ul>
-        </div>
-        <div class="btn-row">
-          <!-- Update href to your actual file -->
-          <a class="btn" href="Admins.html">Open Admin SOP</a>
-          <a class="btn secondary" href="#top">Role focus: Oversight & Consistency</a>
-        </div>
-      </article>
-    </section>
-
-    <section class="section-box">
-      <h2>How to Use This Hub</h2>
-      <ul class="checklist">
-        <li><strong>New staff:</strong> Read this page once, then fully read your role SOP.</li>
-        <li><strong>Cross-training:</strong> Hosts should know how Bouncers log cases, and Bouncers should know how events are planned.</li>
-        <li><strong>Admins:</strong> Use this hub as the “front door” when updating SOPs or onboarding new team members.</li>
-        <li><strong>Questions:</strong> If any SOP feels unclear, ping leadership in the staff channels so we can improve it.</li>
+    <h2 class="intro-heading">How To Use This Hub</h2>
+    <div class="section-box">
+      <ul>
+        <li>Start with the <strong>General Staff SOP Handbook</strong> to understand how all roles fit together.</li>
+        <li>Use the <strong>role-specific SOPs</strong> for detailed step-by-step guidance while you’re working a shift.</li>
+        <li>Check the <strong>Income / Payroll page</strong> if you have questions about payouts, splits, or IP ownership.</li>
+        <li>If something here doesn’t match what leadership has said recently, bring it up so we can update the docs.</li>
       </ul>
-    </section>
+    </div>
+
+    <!-- General Staff SOPs (top) -->
+    <div class="section-label">General</div>
+    <div class="cards">
+      <article class="card">
+        <div>
+          <div class="card-header">
+            <div class="card-emoji">📘</div>
+            <div class="card-title">General Staff SOP Handbook</div>
+          </div>
+          <div class="card-body">
+            Big-picture overview of expectations and procedures for all SoraSkyClub staff roles:
+            Moderators/Security, Hosts, Bartenders, Performers, World Creators, and Social Media Managers.
+            Includes NSFW avatar rules, group join policy, and role comparison chart.
+          </div>
+        </div>
+        <a class="btn" href="StaffSOPs.html">
+          <span class="icon">↗</span>
+          <span>Open General SOPs</span>
+        </a>
+      </article>
+    </div>
+
+    <!-- Role-specific SOPs -->
+    <div class="section-label">Role-Specific SOPs</div>
+    <div class="cards">
+      <article class="card">
+        <div>
+          <div class="card-header">
+            <div class="card-emoji">🎤</div>
+            <div class="card-title">Host / Event Pipeline SOP</div>
+          </div>
+          <div class="card-body">
+            Step-by-step process for taking an idea from <code>#🗒️・planning</code> and turning it into a full event:
+            Notion entry, VRChat group event, Discord event, Fourthwall post, and after-event synopsis.
+          </div>
+        </div>
+        <a class="btn" href="Host Event making.html">
+          <span class="icon">↗</span>
+          <span>Open Host SOP</span>
+        </a>
+      </article>
+
+      <article class="card">
+        <div>
+          <div class="card-header">
+            <div class="card-emoji">🛡️</div>
+            <div class="card-title">Bouncer / Moderation Logging SOP</div>
+          </div>
+          <div class="card-body">
+            How to document infractions in Notion: case titles, Case IDs, actions taken, evidence logging
+            (screenshots & video), and internal notes for Admin review.
+          </div>
+        </div>
+        <a class="btn" href="Moderation.html">
+          <span class="icon">↗</span>
+          <span>Open Bouncer SOP</span>
+        </a>
+      </article>
+
+      <article class="card">
+        <div>
+          <div class="card-header">
+            <div class="card-emoji">📋</div>
+            <div class="card-title">Admin Review & Standing SOP</div>
+          </div>
+          <div class="card-body">
+            Admin workflow for reviewing events and cases, marking severity (Critical vs Non-severe),
+            deciding follow-ups, and updating each user’s standing (Good, Watchlist, Terminated, Banned) in Notion.
+          </div>
+        </div>
+        <a class="btn" href="Admins.html">
+          <span class="icon">↗</span>
+          <span>Open Admin SOP</span>
+        </a>
+      </article>
+    </div>
+
+    <!-- Payroll / Income Policies (bottom) -->
+    <div class="section-label">Finance & Payroll</div>
+    <div class="cards">
+      <article class="card">
+        <div>
+          <div class="card-header">
+            <div class="card-emoji">💸</div>
+            <div class="card-title">Income, Payroll & Revenue Policies</div>
+          </div>
+          <div class="card-body">
+            Breakdown of how NET income is distributed: membership pools for staff roles,
+            merch splits for artists and performers, and social media revenue shares, plus IP ownership rules
+            and what “NET” actually means.
+          </div>
+        </div>
+        <a class="btn" href="payroll.html">
+          <span class="icon">↗</span>
+          <span>Open Payroll / Income Page</span>
+        </a>
+      </article>
+    </div>
 
     <p class="footer-note">
-      SoraSkyClub runs on vibes, but it stays alive on structure.  
-      Thank you for helping keep the club organized, safe, and welcoming.
+      This hub is a living document. If you notice something missing, confusing, or outdated,
+      let leadership know so we can update it for everyone.
     </p>
   </main>
 </body>
