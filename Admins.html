@@ -90,6 +90,30 @@
       background: var(--accent);
       box-shadow: 0 0 6px var(--accent);
     }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin: 0.9rem 0 1.3rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #0b0b14;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .back-link:hover {
+      border-color: var(--accent-soft);
+      color: var(--text);
+      box-shadow: 0 0 10px rgba(255,77,184,0.35);
+    }
+    .back-link span.icon {
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
     .callout {
       border-radius: 12px;
       border: 1px solid var(--accent-soft);
@@ -158,16 +182,21 @@
 <body>
   <main class="page">
     <div class="pill"><span></span> SoraSkyClub • Admin SOP</div>
+    <a class="back-link" href="HomepageSOP.html">
+      <span class="icon">←</span>
+      <span>Back to Staff SOP Hub</span>
+    </a>
+
     <h1>Admin Review SOP (Events & Infractions)</h1>
     <p class="tagline">
       This page explains how <strong>Admins</strong> should review event entries and moderation cases in Notion,
-      decide when follow-up is needed, and make sure Hosts and Bouncers are following their procedures.
+      triage by severity, decide when follow-up is needed, and keep user standing up to date.
     </p>
 
     <div class="callout">
       <strong>Role:</strong> Admins are quality control. You do not replace Hosts or Bouncers;
-      you verify that they have done their job correctly, triage by severity, close cases,
-      and handle escalations when needed.
+      you verify that they have done their job correctly, triage by severity, maintain user standing,
+      close cases, and handle escalations when needed.
     </div>
 
     <h2>0. Overview of Responsibilities</h2>
@@ -177,10 +206,11 @@
         <li>Regularly review <strong>Moderation / Cases</strong> for accuracy and enough evidence.</li>
         <li><strong>Triage by severity:</strong> mark cases as <strong>Critical</strong> (needs immediate attention)
             or <strong>Non-severe</strong> (can be handled during normal admin review).</li>
+        <li>Update each involved user’s <strong>Notion profile status</strong> (Good standing, Watchlist, Terminated, Banned) based on the outcome.</li>
         <li>Decide whether each event or case <strong>Needs follow-up</strong>, <strong>Can be closed</strong>,
             or <strong>Must be escalated</strong>.</li>
         <li>Provide feedback to Hosts and Bouncers if procedures are not followed correctly.</li>
-        <li>Update admin-only fields and statuses in Notion to keep records clean.</li>
+        <li>Keep admin-only fields and statuses in Notion clean and consistent.</li>
       </ul>
     </div>
 
@@ -229,7 +259,7 @@
     <h2>2. Moderation Case Review (Bouncer Work)</h2>
     <div class="section-box">
       <p><strong>Goal:</strong> Ensure that every moderation action is properly logged, fair, backed by evidence,
-         and that cases are handled in order of severity.</p>
+         handled in order of severity, and reflected in the user’s standing.</p>
 
       <h3>2.1 What to Review</h3>
       <p>In the <strong>Moderation / Cases</strong> database, filter for:</p>
@@ -326,6 +356,52 @@
         </li>
         <li>Document final decisions in an admin-only notes field (ban length, appeal outcome, etc.).</li>
       </ul>
+
+      <h3>2.6 Updating User Status in Notion (Standing / Watchlist / Terminated / Banned)</h3>
+      <p>
+        After reviewing and finalizing a case, Admins must update the standing for each user involved
+        on their individual <strong>User page</strong> in Notion. This keeps a single, up-to-date view of how
+        that person currently stands with SoraSkyClub.
+      </p>
+
+      <ul>
+        <li><strong>Where:</strong> Open the user’s Notion profile page and adjust the <strong>Status</strong> property.</li>
+        <li><strong>When:</strong> After a case is marked <strong>Closed</strong> or <strong>Escalated → Resolved</strong>.</li>
+        <li><strong>Statuses:</strong>
+          <ul>
+            <li><strong>Good Standing</strong> – Default state.  
+              <em>Use when:</em> No active concerns, or minor incidents that were resolved and shouldn’t follow them long-term.</li>
+            <li><strong>Watchlist</strong> – The user can still participate, but staff should keep an eye on them.  
+              <em>Use when:</em>
+              <ul>
+                <li>Multiple minor incidents in a short period.</li>
+                <li>A single moderate incident where they were warned and kept in the community.</li>
+                <li>You want Hosts/Bouncers to be more aware around them.</li>
+              </ul>
+            </li>
+            <li><strong>Terminated</strong> – Their staff role or internal position at SoraSkyClub is ended, but they may still exist as a community member (if applicable).  
+              <em>Use when:</em>
+              <ul>
+                <li>Staff are removed from their role for behavior, unreliability, or fit issues.</li>
+                <li>You want a clear record that they are no longer staff, without necessarily banning them from events.</li>
+              </ul>
+            </li>
+            <li><strong>Banned</strong> – Fully removed from SoraSkyClub spaces according to the ban decision.  
+              <em>Use when:</em>
+              <ul>
+                <li>Severe policy violations (safety, harassment, hate, threats, etc.).</li>
+                <li>Repeated violations after prior warnings and suspensions.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <p>
+        When you update a user’s status, add a short note on their page linking the relevant Case ID(s)
+        and date (e.g. “Status set to Watchlist after Case-2025-004 – harassment warning, 2025-03-10”).
+        This helps future Admins understand <strong>why</strong> their status is what it is.
+      </p>
     </div>
 
     <h2>3. Checking Staff Procedure Quality</h2>
@@ -365,6 +441,8 @@
         <li>Mark events clearly when they are fully posted/approved.</li>
         <li>Review new <strong>Moderation Cases</strong>, starting with those marked <strong>Critical</strong>.</li>
         <li>Ensure each case has a <strong>Severity</strong> set (Critical or Non-severe).</li>
+        <li>Update the <strong>Status</strong> on each involved user’s Notion page
+            (Good standing / Watchlist / Terminated / Banned) after the case is resolved.</li>
         <li>Check that evidence (screenshots & video links) is properly connected to each case.</li>
         <li>Decide: <strong>Closed</strong>, <strong>Needs Follow-Up</strong>, or <strong>Escalated</strong> for every pending case.</li>
         <li>Give feedback to Hosts and Bouncers when SOPs are not being followed.</li>
