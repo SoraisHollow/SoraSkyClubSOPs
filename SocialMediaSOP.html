@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SoraSkyClub – Social Media Manager SOP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050509;
+      --bg-alt: #11111a;
+      --accent: #ff4db8;
+      --accent-soft: #ff4db833;
+      --text: #f4f4f7;
+      --muted: #a0a0b5;
+      --border: #272738;
+    }
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #181828 0, var(--bg) 40%);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, #0b0b12, #050509);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.65);
+      padding: 2.5rem 2rem 3rem;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      font-size: 1.9rem;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    h1::before {
+      content: "☁";
+      font-size: 1.6rem;
+      color: var(--accent);
+      filter: drop-shadow(0 0 10px var(--accent));
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.25rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      margin-top: 1.1rem;
+      font-size: 1.02rem;
+      color: var(--accent);
+    }
+
+    p {
+      color: var(--muted);
+      margin: 0.3rem 0 0.8rem;
+    }
+    strong { color: #ffffff; }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.3rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: #0f0f1a;
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid var(--accent-soft);
+      color: var(--muted);
+    }
+    .pill span {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 6px var(--accent);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin: 0.9rem 0 1.3rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #0b0b14;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .back-link:hover {
+      border-color: var(--accent-soft);
+      color: var(--text);
+      box-shadow: 0 0 10px rgba(255,77,184,0.35);
+    }
+    .back-link span.icon {
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    .section-box {
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(8, 8, 14, 0.95);
+      padding: 1rem 1.1rem;
+      margin-top: 1rem;
+    }
+
+    .divider {
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      margin: 0.5rem 0 0.9rem;
+    }
+
+    ul {
+      padding-left: 1.3rem;
+      margin-top: 0.4rem;
+      margin-bottom: 0.7rem;
+    }
+    li {
+      margin: 0.2rem 0;
+      color: var(--muted);
+    }
+
+    .emoji-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .emoji-list li {
+      position: relative;
+      padding-left: 1.6rem;
+      margin: 0.2rem 0;
+    }
+    .emoji-list li span.emoji {
+      position: absolute;
+      left: 0;
+      top: 0.03rem;
+    }
+    .emoji-list li span.label {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .checklist li {
+      list-style: none;
+      position: relative;
+      padding-left: 1.4rem;
+    }
+    .checklist li::before {
+      content: "☑";
+      position: absolute;
+      left: 0;
+      top: 0.05rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    .callout {
+      border-radius: 12px;
+      border: 1px solid var(--accent-soft);
+      background: rgba(10, 10, 18, 0.85);
+      padding: 0.8rem 1rem;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.85rem;
+    }
+    .callout strong {
+      color: var(--accent);
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .top-link {
+      display: inline-block;
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 1.7rem 1.2rem 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page" id="top">
+    <div class="pill"><span></span> SoraSkyClub • Social Media SOP</div>
+    <a class="back-link" href="HomepageSOP.html">
+      <span class="icon">←</span>
+      <span>Back to Staff SOP Hub</span>
+    </a>
+
+    <h1>Social Media Manager SOP</h1>
+    <p class="tagline">
+      This SOP explains how Social Media Managers keep SoraSkyClub visible, cozy, and safe across
+      YouTube, TikTok, Twitter/X, Instagram, and Bluesky.
+    </p>
+
+    <h2>0. Role Overview</h2>
+    <div class="divider"></div>
+    <div class="section-box">
+      <p><strong>Goal:</strong> Turn events, moments, and updates into content that grows SoraSkyClub’s presence, without sacrificing consent or safety.</p>
+      <ul class="emoji-list">
+        <li><span class="emoji">📱</span><span class="label"> Platforms:</span> YouTube, TikTok, Twitter/X, Instagram, Bluesky.</li>
+        <li><span class="emoji">🎛️</span><span class="label"> Duties:</span> Plan posts, edit clips, schedule content, engage with comments/DMs, and track basic analytics.</li>
+        <li><span class="emoji">🧠</span><span class="label"> Mindset:</span> Cozy, inclusive club energy over clout chasing or drama farming.</li>
+      </ul>
+    </div>
+
+    <h2>1. General Guidelines (All Platforms)</h2>
+    <div class="divider"></div>
+    <div class="section-box">
+      <h3>1.1 Brand Voice & Vibe</h3>
+      <ul>
+        <li>Tone: <strong>kind, playful, inclusive, slightly chaotic but never rude</strong>.</li>
+        <li>Keywords: cozy, neon, clouds, VRChat club, safe space, music, LGBTQ+ friendly.</li>
+        <li>Avoid public drama, callouts, or shaming individual members/staff.</li>
+      </ul>
+
+      <h3>1.2 Consent & Safety</h3>
+      <ul>
+        <li>Do not post identifiable people without:
+          <ul>
+            <li>their permission, or</li>
+            <li>a prior agreement for staff/performers being promoted.</li>
+          </ul>
+        </li>
+        <li>Blur/crop out:
+          <ul>
+            <li>real names, personal info, Discord tags, or anything too revealing.</li>
+          </ul>
+        </li>
+        <li>If someone requests content featuring them be removed:
+          <ul>
+            <li>Acknowledge, remove promptly, and notify leadership.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>1.3 Posting Rhythm (Baseline)</h3>
+      <ul>
+        <li><strong>Twitter / Instagram / Bluesky:</strong> 3–5 posts per week total across them.</li>
+        <li><strong>TikTok:</strong> 2–3 short clips per week.</li>
+        <li><strong>YouTube:</strong> 1 highlight / VOD / reel every 1–4 weeks (depending on resources).</li>
+        <li>At least one promo + one recap post for every major event.</li>
+      </ul>
+
+      <h3>1.4 Core Content Types</h3>
+      <ul>
+        <li>Event promos (who/what/when, simple poster/screenshot).</li>
+        <li>Event recaps (screenshots, clips, “here’s how last night went”).</li>
+        <li>World/environment showcases (new rooms, stages, seasonal updates).</li>
+        <li>Staff & performer spotlights (with consent).</li>
+        <li>Short text posts or questions that fit the vibe (“How’s your night going?”, etc.).</li>
+      </ul>
+
+      <h3>1.5 Engagement Habits</h3>
+      <ul class="checklist">
+        <li>Check comments and DMs on active pages at least once per day on event weeks.</li>
+        <li>Like supportive comments; reply to a few with friendly, short responses.</li>
+        <li>Reshare/RT performers and staff when they post about SoraSkyClub.</li>
+        <li>Do not argue in comments; if something gets heated, stop, screenshot, and ping leadership/mods.</li>
+      </ul>
+    </div>
+
+    <h2>2. YouTube SOP</h2>
+    <div class="divider"></div>
+    <div class="section-box">
+      <p><strong>Goal:</strong> Long-form archives and evergreen hype for the club.</p>
+
+      <h3>2.1 Content Types</h3>
+      <ul>
+        <li>Event recap videos (2–8 minutes).</li>
+        <li>Full DJ sets or performance VODs (where audio is allowed).</li>
+        <li>World tours / “club walkthrough” videos.</li>
+        <li>Devlogs for big world updates and features.</li>
+      </ul>
+
+      <h3>2.2 Upload Checklist</h3>
+      <ul class="checklist">
+        <li><strong>Title:</strong> Clear + searchable. Example:<br>
+          <em>SoraSkyClub – Neon Chill Night Highlights | VRChat Club Event</em>
+        </li>
+        <li><strong>Description:</strong> 2–3 sentences about the vibe + links to:
+          <ul>
+            <li>Website / Fourthwall</li>
+            <li>Discord (if public)</li>
+            <li>VRChat group/world link if appropriate</li>
+          </ul>
+        </li>
+        <li><strong>Thumbnail:</strong> High contrast, black/white/pink, short readable text.</li>
+        <li><strong>Tags:</strong> e.g. <code>VRChat</code>, <code>SoraSkyClub</code>, <code>virtual club</code>, <code>lofi</code>, etc.</li>
+        <li><strong>Chapters:</strong> For longer videos, mark key moments (intros, sets, raids, finales).</li>
+      </ul>
+
+      <h3>2.3 Cadence</h3>
+      <ul>
+        <li>Aim for 1 video per major event OR 1 consolidated highlight reel per month.</li>
+        <li>Prefer consistent upload time (e.g. Fridays at 6–8 PM CST).</li>
+      </ul>
+    </div>
+
+    <h2>3. TikTok SOP</h2>
+    <div class="divider"></div>
+    <div class="section-box">
+      <p><strong>Goal:</strong> Short, shareable clips that quickly show the vibe.</p>
+
+      <h3>3.1 Content Types</h3>
+      <ul>
+        <li>10–30 second clips of:
+          <ul>
+            <li>Funny or chaotic moments.</li>
+            <li>Dance loops and crowd reactions.</li>
+            <li>Aesthetic camera shots of the club/world.</li>
+          </ul>
+        </li>
+        <li>Use trending sounds if they fit the vibe and are safe/non-problematic.</li>
+      </ul>
+
+      <h3>3.2 Clip Checklist</h3>
+      <ul class="checklist">
+        <li>Vertical format (9:16).</li>
+        <li>Clear focus: one joke, one moment, or one scene per clip.</li>
+        <li>On-screen text when needed (e.g. <em>“POV: You found the coziest VRChat club at 2am”</em>).</li>
+        <li>Caption + 3–6 hashtags (e.g. <code>#vrchat #club #SoraSkyClub #lofi #cozy</code>).</li>
+      </ul>
+
+      <h3>3.3 Cadence & Engagement</h3>
+      <ul>
+        <li>Aim for 2–3 clips per week.</li>
+        <li>Prioritize posting within 24–48 hours of events.</li>
+        <li>Reply to a few comments with short, friendly responses; pin 1–2 comments explaining what SoraSkyClub is.</li>
+      </ul>
+    </div>
+
+    <h2>4. Twitter / X SOP</h2>
+    <div class="divider"></div>
+    <div class="section-box">
+      <p><strong>Goal:</strong> Real-time announcements, quick vibes, and interaction.</p>
+
+      <h3>4.1 Content Types</h3>
+      <ul>
+        <li>Event announcements and reminders with simple graphics or screenshots.</li>
+        <li>“We’re live in VRChat now!” posts on event nights.</li>
+        <li>Screenshots and quotes from events (no doxxing/log screenshots).</li>
+        <li>Retweets/quote tweets of performers and staff posts about the club.</li>
+        <li>Short text posts or questions to keep the timeline active.</li>
+      </ul>
+
+      <h3>4.2 Post Structure</h3>
+      <ul class="checklist">
+        <li>Strong first line that hooks attention.</li>
+        <li>Clear event info (who/what/when/timezone).</li>
+        <li>Call-to-action (e.g. “Come vibe with us ☁💖”).</li>
+        <li>3–5 targeted hashtags (e.g. <code>#VRChat #vtuber #club #SoraSkyClub</code>).</li>
+      </ul>
+
+      <h3>4.3 Cadence & Engagement</h3>
+      <ul>
+        <li>1–2 posts on non-event days (screenshots, small updates, retweets).</li>
+        <li>On event days:
+          <ul>
+            <li>Day-of reminder.</li>
+            <li>“We’re live” post.</li>
+            <li>Recap post the next day.</li>
+          </ul>
+        </li>
+        <li>Like & reply to friendly mentions; RT performers/staff.</li>
+        <li>If replies become hostile or messy, stop responding and escalate to leadership.</li>
+      </ul>
+    </div>
+
+    <h2>5. Instagram SOP</h2>
+    <div class="divider"></div>
+    <div class="section-box">
+      <p><strong>Goal:</strong> Aesthetic gallery + short Reels that show off the club’s look.</p>
+
+      <h3>5.1 Grid Posts</h3>
+      <ul>
+        <li>High-quality screenshots (club interior, stage, group shots with consent).</li>
+        <li>1–5 images per post; keep a consistent visual style (neon, cozy, pink/black).</li>
+        <li>Captions: 2–4 sentences telling a quick story about the moment or event.</li>
+        <li>5–10 hashtags, e.g. <code>#vrchat #virtualclub #SoraSkyClub #neon #cozy</code>.</li>
+      </ul>
+
+      <h3>5.2 Reels</h3>
+      <ul>
+        <li>Reuse your best TikTok-style clips.</li>
+        <li>Add on-screen text where needed and a short caption.</li>
+        <li>Pick a strong cover frame that looks good on the grid.</li>
+      </ul>
+
+      <h3>5.3 Stories & Cadence</h3>
+      <ul>
+        <li>Stories:
+          <ul>
+            <li>Day-before event reminder.</li>
+            <li>“We’re live” snapshot or clip.</li>
+            <li>After-event “last night’s vibes” screenshot.</li>
+          </ul>
+        </li>
+        <li>Aim for 2–3 feed posts per week (mix of screenshots + Reels).</li>
+      </ul>
+    </div>
+
+    <h2>6. Bluesky SOP</h2>
+    <div class="divider"></div>
+    <div class="section-box">
+      <p><strong>Goal:</strong> Chill presence in a slower, community-focused feed.</p>
+
+      <h3>6.1 Content & Cadence</h3>
+      <ul>
+        <li>Mirror key announcements from Twitter (but not all of them, to avoid spam).</li>
+        <li>Share screenshots, short text posts, and occasional event recaps.</li>
+        <li>2–4 posts per week is sufficient.</li>
+      </ul>
+
+      <h3>6.2 Engagement</h3>
+      <ul>
+        <li>Reply in a relaxed, conversational tone.</li>
+        <li>Boost posts from community members talking positively about SoraSkyClub.</li>
+      </ul>
+    </div>
+
+    <h2>7. Weekly Checklist</h2>
+    <div class="divider"></div>
+    <div class="section-box">
+      <h3>7.1 Every Event Week</h3>
+      <ul class="checklist">
+        <li>Check Notion / Hosts for upcoming events and confirm times.</li>
+        <li>Draft at least one promo post for Twitter/Instagram/Bluesky.</li>
+        <li>Prepare 1–2 short clips for TikTok/Insta Reels from recent events.</li>
+        <li>Schedule or send:
+          <ul>
+            <li>Day-before event reminders.</li>
+            <li>“We’re live” posts on event night.</li>
+          </ul>
+        </li>
+        <li>After the event:
+          <ul>
+            <li>Save 3–10 screenshots + good clips.</li>
+            <li>Post a recap on Twitter, Insta, and Bluesky.</li>
+            <li>Queue 1–2 TikTok/Reels clips from that event.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>7.2 Every Week (General)</h3>
+      <ul class="checklist">
+        <li>Check comments and DMs on all active platforms.</li>
+        <li>Reply and like where appropriate.</li>
+        <li>Note which posts performed best (views, likes, saves, watch time).</li>
+        <li>Share trends and ideas with leadership and Hosts so event promotion can improve over time.</li>
+      </ul>
+    </div>
+
+    <p class="footer-note">
+      Social media is how many people see SoraSkyClub for the first time. When in doubt, prioritize safety,
+      consent, and kindness over numbers. If something feels off, pause and ask leadership before posting.
+    </p>
+
+    <a href="#top" class="top-link">↑ Back to top</a>
+  </main>
+</body>
+</html>
